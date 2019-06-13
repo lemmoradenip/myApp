@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+// import { HeaderComponent } from '../navigation/header/header/header.component';
 
 const routes: Routes = [
   {
+    path: 'header',
+    redirectTo: '/header',
+    pathMatch: 'full'
+  }, 
+  {    
     path: 'tabs',
     component: TabsPage,
     children: [
@@ -24,7 +30,7 @@ const routes: Routes = [
             loadChildren: '../tab2/tab2.module#Tab2PageModule'
           }
         ]
-      },
+      },      
       {
         path: 'tab3',
         children: [
@@ -33,10 +39,19 @@ const routes: Routes = [
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
           }
         ]
-      },
+      },     
+      {
+        path: 'hometab',
+        children: [
+          {
+            path: '',
+            loadChildren: '../hometab/hometab.module#HometabPageModule'
+          }
+        ]
+      },     
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tab1', // default
         pathMatch: 'full'
       }
     ]
@@ -46,6 +61,8 @@ const routes: Routes = [
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
+ 
+  
 ];
 
 @NgModule({
