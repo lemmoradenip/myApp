@@ -43,8 +43,8 @@
 <ion-router-outlet main></ion-router-outlet>
 
  
-<ion-header no-border>
-  <ion-toolbar>
+<ion-header no-border >
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-button color="primary" (click)="openFirst()">
         <ion-icon slot="icon-only" name="menu"></ion-icon>
@@ -73,7 +73,7 @@
 
 
 
-<ion-content padding color="dark">
+<ion-content padding color="dark" class="center-progress-bar">
   <ion-item color="dark">
     <ion-label>Rest Duration</ion-label>
     <ion-datetime display-format="mm:ss" placeholder="Tap here" [(ngModel)]="fulltime"></ion-datetime>
@@ -88,5 +88,6 @@
     [animation]="true"
     [animationDuration]="300"
     [backgroundStroke]="transparent"
+    [showInnerStroke]="false"
   ></circle-progress>
 </ion-content>
