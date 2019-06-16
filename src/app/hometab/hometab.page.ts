@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, LoadingController } from '@ionic/angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-hometab',
@@ -9,6 +10,10 @@ import { MenuController } from '@ionic/angular';
 export class HometabPage implements OnInit {
 
   constructor(private menu: MenuController) { }
+  
+
+
+
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
@@ -18,6 +23,7 @@ export class HometabPage implements OnInit {
     this.menu.open('second');
   }
   ngOnInit() {
+
   }
 
 }
