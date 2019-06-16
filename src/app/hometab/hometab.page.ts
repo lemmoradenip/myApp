@@ -8,10 +8,17 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./hometab.page.scss'],
 })
 export class HometabPage implements OnInit {
+  percent: number = 99;
+  radius: number = 100;
+  fullTime: any = '00:01:30';
+
 
   constructor(private menu: MenuController) { }
-  
 
+
+startTime(){
+  console.log('i was clicked but do nothing!');
+}
 
 
   openFirst() {
