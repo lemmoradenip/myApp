@@ -26,7 +26,11 @@ const routes: Routes = [
       innerStrokeWidth: 8,
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
-      animationDuration: 300
+      animationDuration: 300,
+      animation: false,
+      responsive: true,
+      renderOnClick: true,
+      lazy:false
     })
   ],
   declarations: [HometabPage]
