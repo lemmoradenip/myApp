@@ -79,7 +79,7 @@ export class HometabPage implements OnInit {
 
       let now = new Date().getTime();
       let distance = now - countDownDate.getTime();
-      console.log(distance);
+      // console.log(distance);
 
       this.elapsed.h = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
       this.elapsed.m = Math.floor((distance % (1000 * 60 * 60) / (1000 * 60)));
