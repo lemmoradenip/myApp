@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Insomnia } from '@ionic-native/insomnia/ngx';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { MenuController } from '@ionic/angular';
   templateUrl: './hometab.page.html',
   styleUrls: ['./hometab.page.scss'],
 })
-export class HometabPage {
+export class HometabPage implements OnInit {
   percent: number;
   radius: number = 100;
   fullTime: any = '00:00:10';
@@ -24,6 +25,9 @@ export class HometabPage {
   }
   overalltimer: any = false;
 
+  constructor(private menu: MenuController, private insomnia: Insomnia) {
+
+  }
 
   startTime() {
     if (this.timer) {
@@ -100,27 +104,29 @@ export class HometabPage {
     this.timer = false;
     this.percent = 0;
     this.progress = 0;
-    this.elapsed = {
-      h: '00',
-      m: '00',
-      s: '00'
-    }
+    // this.elapsed = {
+    //   h: '00',
+    //   m: '00',
+    //   s: '00'
+    // }
+    this.insomnia.allowSleepAgain();
   }
 
 
 
 
-  constructor(private menu: MenuController) { }
+
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
+
   }
   openSecond() {
     this.menu.enable(true, 'second');
     this.menu.open('second');
   }
-  // ngOnInit() {
+  ngOnInit() {
 
-  // }
+  }
 
 }
